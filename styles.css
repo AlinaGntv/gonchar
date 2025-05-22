@@ -65,17 +65,25 @@ header .container {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.logo i {
-    font-size: 28px;
-    color: var(--primary-color);
+.logo-img {
+    height: 70px; /* Или любой другой размер по вашему усмотрению */
+    width: auto; /* Сохраняет пропорции изображения */
+    max-width: 200px; /* Ограничивает максимальную ширину */
+    transition: opacity 0.3s ease;
 }
 
-.logo h1 {
-    font-size: 20px;
-    font-weight: 700;
+.logo-img:hover {
+    opacity: 0.9;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+        max-width: 160px;
+    }
 }
 
 nav ul {
@@ -355,6 +363,118 @@ footer {
     max-width: 500px;
     position: relative;
     animation: modalopen 0.5s;
+}
+
+.address-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.address-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.address-section input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.address-section input:focus {
+    border-color: #8B4513;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+}
+
+.address-section input.error {
+    border-color: #ff4444;
+}
+
+/* Секция выбора оплаты */
+.payment-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.payment-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-method:hover {
+    background: #f0f0f0;
+}
+
+.payment-method.selected {
+    border-color: #8B4513;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+.payment-method input {
+    margin-right: 10px;
+}
+
+.payment-method label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.payment-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #555;
+}
+
+/* Кнопка оформления заказа */
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    background: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #A0522D;
+}
+
+.checkout-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
 }
 
 @keyframes modalopen {
@@ -664,3 +784,6 @@ footer {
         opacity: 0;
     }
 }
+
+
+

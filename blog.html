@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог о гончарном искусстве | Гончарная мастерская</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для блога */
+        .blog-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 10px;
+            color: #8B4513;
+        }
+
+        .blog-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #8B4513;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Тот же хедер, что и на главной -->
+    </header>
+
+    <main>
+        <section class="blog-container">
+            <h2>Наш блог о гончарном искусстве</h2>
+            <div class="blog-grid">
+
+
+                <!-- Блог 2 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <h3>5 основных техник ручной лепки</h3>
+                        <p>Подробный гид по традиционным методам создания керамики без гончарного круга.</p>
+                        <a href="blog-post2.html" class="read-more">Читать далее →</a>
+                    </div>
+                </article>
+
+                <!-- Блог 3 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <h3>Тайны обжига: как температура меняет керамику</h3>
+                        <p>Научный взгляд на процесс обжига и его влияние на свойства глиняных изделий.</p>
+                        <a href="blog-post3.html" class="read-more">Читать далее →</a>
+                    </div>
+                </article>
+
+                <!-- Блог 4 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <h3>Современные тенденции в керамическом искусстве</h3>
+                        <p>Как современные дизайнеры переосмысливают традиционные формы.</p>
+                        <a href="blog-post4.html" class="read-more">Читать далее →</a>
+                    </div>
+                </article>
+
+                <!-- Блог 1 -->
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <h3>История гончарного ремесла</h3>
+                        <p>Как развивалось гончарное дело от древних времен до наших дней. Интересные факты о традициях
+                            разных стран.</p>
+                        <a href="blog-post1.html" class="read-more">Читать далее →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Тот же футер, что и на главной -->
+    </footer>
+    <script src="blog.js"></script>
+
+</body>
+
+</html>

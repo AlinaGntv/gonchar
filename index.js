@@ -194,8 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
             
             // Закрываем мобильное меню после клика
@@ -298,9 +302,91 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="cart-total">
                     <strong>Итого: ${cart.reduce((total, item) => total + (item.price * item.quantity), 0)} руб.</strong>
                 </div>
+                
+                <div class="address-section">
+                    <label for="address">Адрес доставки:</label>
+                    <input type="text" id="address" placeholder="Введите ваш полный адрес с индексом">
+                </div>
+                
+                <div class="payment-section">
+                    <h3>Способ оплаты</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="cash" name="payment" value="cash" checked>
+                            <label for="cash">
+                                <i class="fas fa-money-bill-wave payment-icon"></i>
+                                Наличными при получении
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="card" name="payment" value="card">
+                            <label for="card">
+                                <i class="fas fa-credit-card payment-icon"></i>
+                                Банковской картой при получении
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
                 <button class="btn checkout-btn">Оформить заказ</button>
             </div>
         `;
+        document.body.appendChild(cartModal);
+
+        // Обработка выбора способа оплаты
+        const paymentMethods = cartModal.querySelectorAll('.payment-method');
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', () => {
+                paymentMethods.forEach(m => m.classList.remove('selected'));
+                method.classList.add('selected');
+                method.querySelector('input').checked = true;
+            });
+        });
+
+        // Обработка кнопки оформления
+        cartModal.querySelector('.checkout-btn').addEventListener('click', () => {
+            const addressInput = cartModal.querySelector('#address');
+            const address = addressInput.value.trim();
+            const paymentMethod = cartModal.querySelector('input[name="payment"]:checked').value;
+            
+            if (!address) {
+                addressInput.classList.add('error');
+                showMessage('Пожалуйста, введите адрес доставки', 'error');
+                return;
+            }
+            
+            // Создаем объект заказа
+            const order = {
+                items: [...cart],
+                total: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+                address: address,
+                payment: paymentMethod,
+                date: new Date().toISOString()
+            };
+            
+            // Здесь можно отправить заказ на сервер
+            console.log('Заказ оформлен:', order);
+            
+            // Очищаем корзину
+            cart.length = 0;
+            localStorage.removeItem('cart');
+            updateCartCounter();
+            
+            // Показываем подтверждение
+            showMessage(`Заказ оформлен! Способ оплаты: ${getPaymentMethodName(paymentMethod)}`, 'success');
+            cartModal.remove();
+        });
+
+        // Вспомогательная функция для получения названия способа оплаты
+        function getPaymentMethodName(method) {
+            const methods = {
+                'cash': 'Наличные при получении',
+                'card': 'Банковская карта онлайн',
+                'sbp': 'СБП (Система быстрых платежей)'
+            };
+            return methods[method] || method;
+        }
+
         
         document.body.appendChild(cartModal);
         cartModal.style.display = 'block';

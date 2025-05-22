@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тайны обжига | Блог</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-post img {
+            display: block;
+            margin: 20px auto;
+            width: 70%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h1 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .blog-post h2 {
+            color: #A0522D;
+            margin: 30px 0 15px;
+        }
+
+        .blog-post p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .temperature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .temperature-table th,
+        .temperature-table td {
+            border: 1px solid #D2B48C;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .temperature-table th {
+            background-color: #F5F5DC;
+        }
+
+        .temperature-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #8B4513;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #8B4513;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Хедер -->
+    </header>
+
+    <main>
+        <article class="blog-post">
+            <h1>Тайны обжига: как температура меняет керамику</h1>
+            <p>Процесс обжига — это магия превращения мягкой глины в прочное керамическое изделие. Температурные режимы
+                кардинально влияют на свойства материала, определяя его прочность, пористость и внешний вид.</p>
+
+            <img src="img/31.jpg" alt="Печь для обжига керамики">
+
+            <h2>Этапы температурного воздействия</h2>
+            <p>Современные печи позволяют точно контролировать процесс обжига, который делится на несколько ключевых
+                этапов:</p>
+
+            <table class="temperature-table">
+                <tr>
+                    <th>Температурный диапазон</th>
+                    <th>Процессы</th>
+                    <th>Результат</th>
+                </tr>
+                <tr>
+                    <td>20-200°C</td>
+                    <td>Испарение физической воды</td>
+                    <td>Изделие становится хрупким</td>
+                </tr>
+                <tr>
+                    <td>200-600°C</td>
+                    <td>Выгорание органических примесей</td>
+                    <td>Изменение цвета глины</td>
+                </tr>
+                <tr>
+                    <td>600-900°C</td>
+                    <td>Дегидратация глины</td>
+                    <td>Необратимые химические изменения</td>
+                </tr>
+                <tr>
+                    <td>900-1200°C</td>
+                    <td>Спекание частиц</td>
+                    <td>Образование прочного черепка</td>
+                </tr>
+                <tr>
+                    <td>1200-1400°C</td>
+                    <td>Плавление и образование стеклофазы</td>
+                    <td>Полная водонепроницаемость</td>
+                </tr>
+            </table>
+
+            <h2>Виды обжига</h2>
+            <img src="img/32.jpg" alt="Различные виды обжига керамики">
+            <p><strong>Бисквитный обжиг</strong> (900-1000°C) - первичный обжиг без глазури. Придает изделию пористость
+                для лучшего сцепления с глазурью.</p>
+            <p><strong>Глазурный обжиг</strong> (1100-1300°C) - финальный обжиг после нанесения глазури. Температура
+                зависит от состава глазури и желаемого эффекта.</p>
+            <p><strong>Раку</strong> (специальный японский метод) - изделие извлекают из печи при 900°C и сразу
+                охлаждают, создавая уникальные кракелюры.</p>
+
+            <p>Понимание этих процессов позволяет мастеру точно контролировать результат и создавать изделия с заранее
+                заданными свойствами.</p>
+
+            <a href="blog.html" class="back-link">← Вернуться ко всем статьям</a>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Футер -->
+    </footer>
+</body>
+
+</html>
